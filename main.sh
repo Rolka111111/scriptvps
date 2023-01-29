@@ -111,11 +111,11 @@ function dir_xray() {
     mkdir -p /etc/vless
     mkdir -p /etc/trojan
     mkdir -p /etc/shadowsocks
-    # mkdir -p /usr/sbin/xray/
+    mkdir -p /usr/sbin/xray/
     mkdir -p /var/log/xray/
     mkdir -p /var/www/html/
     mkdir -p /etc/cendrawasih/
-#    chmod +x /var/log/xray
+    chmod +x /var/log/xray
     touch /var/log/xray/access.log
     touch /var/log/xray/error.log
     chmod 777 /var/log/xray/*.log
@@ -168,7 +168,7 @@ function install_xray(){
     print_success "Xray Core"
     cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/xray.pem
     wget -O /etc/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1 
-    #wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
+    wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
     wget -O /usr/sbin/websocket "${REPO}bin/ws" >/dev/null 2>&1
     wget -O /etc/websocket/tun.conf "${REPO}xray/tun.conf" >/dev/null 2>&1 
     wget -O /etc/systemd/system/ws.service "${REPO}xray/ws.service" >/dev/null 2>&1 
@@ -420,8 +420,8 @@ function enable_services(){
 
 function install_all() {
     base_package
-    # dir_xray
-    # add_domain
+    dir_xray
+    add_domain
     pasang_ssl 
     install_xray >> /root/install.log
     install_ovpn >> /root/install.log
@@ -446,7 +446,7 @@ function finish(){
 "
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
     cp /etc/openvpn/*.ovpn /var/www/html/
-    # sed -i "s/xxx/${domain}/g" /var/www/html/index.html
+    sed -i "s/xxx/${domain}/g" /var/www/html/index.html
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${MYIP}/g" /etc/squid/squid.conf
     chown -R www-data:www-data /etc/msmtprc
@@ -512,4 +512,4 @@ finish
 
 rm ~/.bash_history
 sleep 10
-# reboot
+reboot
