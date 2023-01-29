@@ -111,7 +111,7 @@ function dir_xray() {
     mkdir -p /etc/vless
     mkdir -p /etc/trojan
     mkdir -p /etc/shadowsocks
-    mkdir -p /usr/sbin/xray/
+    # mkdir -p /usr/sbin/xray/
     mkdir -p /var/log/xray/
     mkdir -p /var/www/html/
     mkdir -p /etc/cendrawasih/
