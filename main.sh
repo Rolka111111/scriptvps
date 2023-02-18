@@ -89,6 +89,7 @@ function base_package() {
     sysctl -w net.ipv6.conf.default.disable_ipv6=1  >/dev/null 2>&1
     sudo apt update
     sudo apt-get autoremove -y man-db apache2 ufw exim4 firewalld -y
+    sudo apt install software-properties-common -y
     sudo add-apt-repository ppa:vbernat/haproxy-2.7 -y
     sudo apt update && apt upgrade -y
     sudo apt install squid nginx zip pwgen openssl netcat bash-completion linux-tools-common \
