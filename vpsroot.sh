@@ -1,7 +1,8 @@
 #!/bin/bash
 # Mod By SL
+# wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/scriptvps/master/vpsroot.sh && bash vpsroot.sh
 #echo "$crot    ALL=(ALL:ALL) ALL" >> /etc/sudoers;
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/Mantap/main/sshd_config;
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/Mantap/master/config/sshd_config;
 systemctl restart sshd;
 clear;
 echo -e "New Password:";
