@@ -1,6 +1,6 @@
 #!/bin/bash
 # Mod By SL
-# wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/scriptvps/master/config/vpsroot.sh
+# wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/scriptvps/master/config/vpsroot.sh && bash vpsroot.sh
 #echo "$crot    ALL=(ALL:ALL) ALL" >> /etc/sudoers;
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Rolka111111/scriptvps/master/config/sshd_config;
 systemctl restart sshd;
