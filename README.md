@@ -12,8 +12,6 @@
 <pre><code>apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/Rolka111111/scriptvps/master/main.sh && chmod +x main.sh && screen -S install ./main.sh</code></pre>
 
 
-<pre><code>wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/Rolka111111/scriptvps/master/vpsroot.sh && bash vpsroot.sh</code></pre>
-
 Akses kembali 15 setelah proses instalasi.
 
 ### TESTED ON OS 
